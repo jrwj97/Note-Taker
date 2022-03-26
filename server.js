@@ -23,6 +23,20 @@ app.get("/api/notes", (req, res) => {
   res.json(db);
 })
 
+app.post("api/notes", (req, res) => {
+  let filePath = path.join(__dirname, "/db/db.json");
+  let newNote = req.body;
+  let highId = 99;
+
+  for (let i = 0; i < db.lenhgth; i++) {
+    let indNote = db[i];
+    if (indNote.id > highId) {
+      highId = indNote.id;
+    }
+  }
+  newNote.id = highId + 1;
+  database.push(newNote);
+})
 
 app.listen(PORT, (req, res) => {
   console.log(`Server running on ${PORT}`);
