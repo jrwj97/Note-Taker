@@ -11,6 +11,7 @@
 
   ## Guide
   Visit https://safe-dawn-92883.herokuapp.com/ and click Get Started to begin taking notes!
+  ![image](/public/assets/Screenshot/Screen%20Shot%202022-03-26%20at%2017.29.29.png)
 
   ## License
   This project is licensed under MIT
