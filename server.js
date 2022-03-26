@@ -36,6 +36,11 @@ app.post("api/notes", (req, res) => {
   }
   newNote.id = highId + 1;
   database.push(newNote);
+
+  fs.writeFile(filePath, JSON.stringify(db), (err) => {
+    if (err) throw err;
+  })
+  res.json(newNote);
 })
 
 app.listen(PORT, (req, res) => {
